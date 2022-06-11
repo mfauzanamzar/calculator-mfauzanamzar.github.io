@@ -14,7 +14,7 @@ body{
 .calculator {
 	text-align: center;
 	margin: 0 auto;
-	padding-top: 50px;
+	padding-top: 25px;
 	width: 500px;
 	background-color: #22252D;
 	border-radius: 50px;
@@ -117,9 +117,51 @@ button:hover{
 
 .author{
 	font-size: 10px;
-	color: #e0dddd
+	color: #e0dddd;
+	padding-bottom: 25px;
+}
+
+.author span{
+	font-weight: bold;
 }
 
 .author-light{
 	color: #6F7277;
+}
+
+.toggle{
+	width: 120px;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 20px;
+	background-color: #2A2D37;
+	border-radius: 10px;
+	color: #676c7e;
+}
+
+.toggle-dark{
+	background-color: #2A2D37;
+}
+
+.toggle-light{
+	background-color: #F3F1F1;
+}
+
+
+
+.active-dark{
+	color: #f3f1f1;
+}
+
+.nonactive-dark{
+	color: #959db1;
+}
+
+.active-light{
+	color: #353944;
+}
+
+.nonactive-light{
+	color: #747a8b;
 }

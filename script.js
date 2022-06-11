@@ -59,7 +59,7 @@ numbers.forEach((number) =>
 
 const inputPercentage = (number) => {
   result = number / 100;
-  currentNumber = result
+  currentNumber = result;
 };
 
 const inputOperator = (operator, operatorDisplay) => {
@@ -133,19 +133,40 @@ const theme = document.getElementById("theme");
 const backgroundColor = document.getElementById("bg");
 const bottomBackground = document.querySelector(".calculator-keys");
 const button = document.querySelectorAll("button");
-const author = document.querySelectorAll(".author")
+const author = document.querySelectorAll(".author");
+const dark = document.getElementById("dark");
+const light = document.getElementById("light");
+const toggle = document.querySelector(".toggle");
 
-theme.addEventListener("click", () => {
-  theme.classList.toggle("dark-btn");
-  theme.classList.toggle("fa-toggle-on");
-  backgroundColor.classList.toggle("calculator-white");
-  calculatorScreen.classList.toggle("calculator-screen-light");
-  prevCalculatorScreen.classList.toggle("calculator-prev-screen-light");
-  bottomBackground.classList.toggle("calculator-keys-light");
-  decimal.classList.toggle("number-light");
-  numbers.forEach((number) => number.classList.toggle("number-light"));
-  button.forEach((btn) => btn.classList.toggle("button-light"));
-  author.forEach(author=>(
-    author.classList.toggle("author-light")
-  ))
+dark.addEventListener("click", () => {
+  dark.classList.add("active-dark");
+  dark.classList.remove("nonactive-dark");
+  light.classList.add("nonactive-light");
+  light.classList.remove("active-ligth");
+  toggle.classList.remove("toggle-light");
+
+  numbers.forEach((number) => number.classList.remove("number-light"));
+  button.forEach((btn) => btn.classList.remove("button-light"));
+  author.forEach((author) => author.classList.remove("author-light"));
+  bottomBackground.classList.remove("calculator-keys-light");
+  backgroundColor.classList.remove("calculator-white");
+  calculatorScreen.classList.remove("calculator-screen-light");
+  prevCalculatorScreen.classList.remove("calculator-prev-screen-light");
+  decimal.classList.remove("number-light");
+});
+
+light.addEventListener("click", () => {
+  dark.classList.remove("active-dark");
+  dark.classList.add("nonactive-dark");
+  light.classList.add("active-light");
+  light.classList.remove("nonactive-light");
+  numbers.forEach((number) => number.classList.add("number-light"));
+  button.forEach((btn) => btn.classList.add("button-light"));
+  author.forEach((author) => author.classList.add("author-light"));
+  bottomBackground.classList.add("calculator-keys-light");
+  backgroundColor.classList.add("calculator-white");
+  calculatorScreen.classList.add("calculator-screen-light");
+  prevCalculatorScreen.classList.add("calculator-prev-screen-light");
+  toggle.classList.add("toggle-light");
+  decimal.classList.add("number-light");
 });
